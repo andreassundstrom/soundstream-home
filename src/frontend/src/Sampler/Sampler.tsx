@@ -21,7 +21,6 @@ export const Sampler = () => {
         var modulator = new GainNode(audioCtx, {gain: modulationDepth})
 
         // Start
-        carrier.start()
         modulatorOsc.start()
         carrierFrequencyOffset.start()
 
@@ -31,7 +30,6 @@ export const Sampler = () => {
         carrierFrequencyOffset.connect(carrier.frequency)
 
 
-        carrier.stop(audioCtx.currentTime + attack + sustain + release)
         
         const time = audioCtx.currentTime
         const sweepEnv = new GainNode(audioCtx);
